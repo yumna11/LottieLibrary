@@ -1,0 +1,38 @@
+ADD ANIMATION IN ANDROID APP USING LOTTIE LIBRARY:
+Install Bodymovin(extension)
+Download the ZIP(Bodymovin) from the repo (https://github.com/bodymovin/bodymovin)
+Extract content. Bring the extension over to your desktop, you can find it here:  bodymovin-master/build/extension/bodymovin.zxp
+Dowload ZXP installer from aescripts.com. (http://aescripts.com/learn/zxp-installer/)
+Open “ZXP Installer.app” and drag the the extension into it.
+Open After Effects and make sure the extension has been installed. 
+Make a small animation using After Effects
+Export the animation using Bodymovin in json.
+Create an new project on Android Studio
+ Create a folder called “assets” in “app/app/src/main” and drag your  JSON file into it
+Open the file called “build.gradle (Module: app)” and add this line just before the last closing bracket: compile 'com.airbnb.android:lottie:2.1.2'
+Replace all of the code in “activity_main.xml” with:
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_fileName="md_logo_animation.json"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true" />
+
+</RelativeLayout>
+
+Now, you can run the app.
+Thanks
+Here’s the source files for this project:
+GitHub link: https://github.com/yumna11/LottieLibrary
+
+Bodymovin download link: https://github.com/bodymovin/bodymovin
+ZXP Installer download link: http://aescripts.com/learn/zxp-installer/
